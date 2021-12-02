@@ -38,7 +38,6 @@ const part2 = (rawInput: string) => {
     } else if (direction === 'up') {
       aim -= distance;
     }
-    input.length < 100 && console.log({horizontal, vertical});
   });
 
   return horizontal * vertical;

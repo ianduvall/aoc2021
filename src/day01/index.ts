@@ -27,8 +27,6 @@ const part2 = (rawInput: string) => {
     slidingWindowSum[i] = sumArray(input.slice(i, i + windowSize));
   }
 
-  slidingWindowSum.length < 100 && console.log(slidingWindowSum);
-
   return part1Parsed(slidingWindowSum);
 };
 
