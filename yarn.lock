@@ -7,10 +7,10 @@
   resolved "https://registry.yarnpkg.com/@tootallnate/once/-/once-2.0.0.tgz#f544a148d3ab35801c1f633a7441fd87c2e484bf"
   integrity sha512-XCuKFP5PS55gnMVu3dty8KPatLqUoy/ZYzDzAGCQ8JNFCkLXzmI7vNHCR+XpbZaMWQK/vQubr7PkYq8g470J/A==
 
-"@types/node@^16.11.10":
-  version "16.11.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.10.tgz#2e3ad0a680d96367103d3e670d41c2fed3da61ae"
-  integrity sha512-3aRnHa1KlOEEhJ6+CvyHKK5vE9BcLGjtUpwvqYLRvYNQKMfabu3BwfJaA/SLW8dxe28LsNDjtHwePTuzn3gmOA==
+"@types/node@^16.11.11":
+  version "16.11.11"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.11.tgz#6ea7342dfb379ea1210835bada87b3c512120234"
+  integrity sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==
 
 abab@^2.0.3, abab@^2.0.5:
   version "2.0.5"
@@ -55,10 +55,10 @@ anymatch@~3.1.2:
     normalize-path "^3.0.0"
     picomatch "^2.0.4"
 
-aocrunner@^1.4.5:
-  version "1.4.5"
-  resolved "https://registry.yarnpkg.com/aocrunner/-/aocrunner-1.4.5.tgz#fd28d86aa861f3abdd2b9f5d34b2370d138c49b9"
-  integrity sha512-9BIhT+DW8kPHqSZPCbwR59EorsSoBfYApc/cWeNCNNs826yh1ifjiHoAG4/2VUTu6nzTOyYmvNlLf2KOby2nmQ==
+aocrunner@^1.4.10:
+  version "1.4.10"
+  resolved "https://registry.yarnpkg.com/aocrunner/-/aocrunner-1.4.10.tgz#49df29db96bb2f8625429a1c211d2a8469a524c7"
+  integrity sha512-4wgTfVygQoml1FlHm7z5pX0YjMCEffPxAxrfk8tsEjK216JWk7fD63a8ziZr7f6pAuAsOTkvwVhB3l9EUx/f7Q==
   dependencies:
     chokidar "^3.5.2"
     common-tags "^1.8.0"
