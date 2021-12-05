@@ -1,35 +1,35 @@
 import run from "aocrunner";
 
-const parseInput = (rawInput: string) => rawInput.split('\n');
+const parseInput = (rawInput: string) => rawInput.split("\n");
 
 const part1 = (rawInput: string) => {
   const input = parseInput(rawInput);
   const zeros: number[] = new Array(input[0].length).fill(0);
-  const ones: number [] = [...zeros];
+  const ones: number[] = [...zeros];
 
-  input.forEach(line => {
+  input.forEach((line) => {
     for (let i = 0, end = input.length; i < end; i++) {
       const char = line[i];
-      if (char === '0') {
+      if (char === "0") {
         ++zeros[i];
-      } else if (char === '1') {
+      } else if (char === "1") {
         ++ones[i];
       }
     }
-  })
+  });
 
   // gamma
-  let leastCommon = '';
+  let leastCommon = "";
   // epsilon
-  let mostCommon = '';
+  let mostCommon = "";
 
   for (let i = 0, end = zeros.length; i < end; i++) {
     if (zeros[i] > ones[i]) {
-      mostCommon += '0';
-      leastCommon += '1';
+      mostCommon += "0";
+      leastCommon += "1";
     } else {
-      mostCommon += '1';
-      leastCommon += '0';
+      mostCommon += "1";
+      leastCommon += "0";
     }
   }
 
@@ -39,24 +39,24 @@ const part1 = (rawInput: string) => {
 const part2 = (rawInput: string) => {
   const input = parseInput(rawInput);
 
-  const calcRating = (criteria: 'most' | 'least') => {
+  const calcRating = (criteria: "most" | "least") => {
     let nums = input;
     let i = 0;
 
     while (nums.length > 1) {
       let zeros: string[] = [];
       let ones: string[] = [];
-      
-      nums.forEach(line => {
+
+      nums.forEach((line) => {
         const char = line[i];
-        if (char === '0') {
+        if (char === "0") {
           zeros.push(line);
-        } else if (char === '1') {
+        } else if (char === "1") {
           ones.push(line);
         }
       });
 
-      if (criteria === 'most') {
+      if (criteria === "most") {
         if (zeros.length > ones.length) {
           nums = zeros;
         } else {
@@ -76,10 +76,10 @@ const part2 = (rawInput: string) => {
   };
 
   // oxygen
-  const mostCommon = parseInt(calcRating('most'), 2);
+  const mostCommon = parseInt(calcRating("most"), 2);
 
   // CO2
-  const leastCommon = parseInt(calcRating('least'), 2);
+  const leastCommon = parseInt(calcRating("least"), 2);
 
   return mostCommon * leastCommon;
 };
@@ -100,15 +100,11 @@ const exampleInput = `
 `;
 run({
   part1: {
-    tests: [
-      { input: exampleInput, expected: 198 },
-    ],
+    tests: [{ input: exampleInput, expected: 198 }],
     solution: part1,
   },
   part2: {
-    tests: [
-      { input: exampleInput, expected: 230 },
-    ],
+    tests: [{ input: exampleInput, expected: 230 }],
     solution: part2,
   },
   trimTestInputs: true,

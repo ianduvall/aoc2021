@@ -1,9 +1,13 @@
 import run from "aocrunner";
 
-const parseInput = (rawInput: string) => rawInput.split('\n').map(line => {
-  const [direction, distance] = line.split(' ');
-  return [direction, parseInt(distance, 10)] as ['forward' | 'down' | 'up', number];
-});
+const parseInput = (rawInput: string) =>
+  rawInput.split("\n").map((line) => {
+    const [direction, distance] = line.split(" ");
+    return [direction, parseInt(distance, 10)] as [
+      "forward" | "down" | "up",
+      number,
+    ];
+  });
 
 const part1 = (rawInput: string) => {
   const input = parseInput(rawInput);
@@ -11,11 +15,11 @@ const part1 = (rawInput: string) => {
   let vertical = 0;
 
   const directions = input.forEach(([direction, distance]) => {
-    if (direction === 'forward') {
+    if (direction === "forward") {
       horizontal += distance;
-    } else if (direction === 'down') {
+    } else if (direction === "down") {
       vertical += distance;
-    } else if (direction === 'up') {
+    } else if (direction === "up") {
       vertical -= distance;
     }
   });
@@ -30,12 +34,12 @@ const part2 = (rawInput: string) => {
   let aim = 0;
 
   const directions = input.forEach(([direction, distance]) => {
-    if (direction === 'forward') {
+    if (direction === "forward") {
       horizontal += distance;
       vertical += aim * distance;
-    } else if (direction === 'down') {
+    } else if (direction === "down") {
       aim += distance;
-    } else if (direction === 'up') {
+    } else if (direction === "up") {
       aim -= distance;
     }
   });
@@ -46,27 +50,33 @@ const part2 = (rawInput: string) => {
 run({
   part1: {
     tests: [
-      { input: `
+      {
+        input: `
       forward 5
       down 5
       forward 8
       up 3
       down 8
       forward 2
-      `, expected: 150 },
+      `,
+        expected: 150,
+      },
     ],
     solution: part1,
   },
   part2: {
     tests: [
-      { input: `
+      {
+        input: `
       forward 5
       down 5
       forward 8
       up 3
       down 8
       forward 2
-      `, expected: 900 },
+      `,
+        expected: 900,
+      },
     ],
     solution: part2,
   },

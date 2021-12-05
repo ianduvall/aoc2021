@@ -4,16 +4,17 @@ type Coordinates = [x: number, y: number];
 type Line = [start: Coordinates, end: Coordinates];
 
 const parseCoordinates = (coord: string): Coordinates => {
-  const [x, y] = coord.split(',').map(Number);
+  const [x, y] = coord.split(",").map(Number);
   return [x, y];
 };
 const parseLine = (line: string): Line => {
-  const [start, end] = line.split(' -> ');
-  
+  const [start, end] = line.split(" -> ");
+
   return [parseCoordinates(start), parseCoordinates(end)];
 };
 
-const parseInput = (rawInput: string): Line[] => rawInput.split("\n").map(line => parseLine(line));
+const parseInput = (rawInput: string): Line[] =>
+  rawInput.split("\n").map((line) => parseLine(line));
 
 const part1 = (rawInput: string) => {
   const lines = parseInput(rawInput);
@@ -102,7 +103,7 @@ const part2 = (rawInput: string) => {
     } else {
       // diagonal
       const incrementX = x1 < x2 ? (x: number) => x + 1 : (x: number) => x - 1;
-      const incrementY = y1 < y2 ? (y: number) => y + 1: (y: number) => y - 1;
+      const incrementY = y1 < y2 ? (y: number) => y + 1 : (y: number) => y - 1;
       for (let x = x1, y = y1; x !== x2; x = incrementX(x), y = incrementY(y)) {
         logCoordinate([x, y]);
       }
@@ -117,7 +118,8 @@ const part2 = (rawInput: string) => {
 run({
   part1: {
     tests: [
-      { input: `
+      {
+        input: `
 0,9 -> 5,9
 8,0 -> 0,8
 9,4 -> 3,4
@@ -128,9 +130,12 @@ run({
 3,4 -> 1,4
 0,0 -> 8,8
 5,5 -> 8,2
-      `, expected: 5 },
+      `,
+        expected: 5,
+      },
       // don't double count intersections
-      { input: `0,9 -> 2,9
+      {
+        input: `0,9 -> 2,9
 0,9 -> 5,9
 8,0 -> 0,8
 9,4 -> 3,4
@@ -141,13 +146,16 @@ run({
 3,4 -> 1,4
 0,0 -> 8,8
 5,5 -> 8,2
-      `, expected: 5 },
+      `,
+        expected: 5,
+      },
     ],
     solution: part1,
   },
   part2: {
     tests: [
-      { input: `
+      {
+        input: `
 0,9 -> 5,9
 8,0 -> 0,8
 9,4 -> 3,4
@@ -158,7 +166,9 @@ run({
 3,4 -> 1,4
 0,0 -> 8,8
 5,5 -> 8,2
-      `, expected: 12 },
+      `,
+        expected: 12,
+      },
     ],
     solution: part2,
   },

@@ -1,6 +1,7 @@
 import run from "aocrunner";
 
-const parseInput = (rawInput: string) => rawInput.split('\n').map(str => parseInt(str, 10));
+const parseInput = (rawInput: string) =>
+  rawInput.split("\n").map((str) => parseInt(str, 10));
 
 const part1 = (rawInput: string) => {
   const input = parseInput(rawInput);
@@ -14,15 +15,16 @@ const part1Parsed = (input: number[]) => {
     }
   }
 
-  return  numIncreases;
+  return numIncreases;
 };
 
 const windowSize = 3;
 const part2 = (rawInput: string) => {
   const input = parseInput(rawInput);
   let slidingWindowSum: number[] = new Array(input.length - windowSize + 1);
-  const sumArray = (arr: number[]): number => arr.reduce((sum,num) => sum + num, 0);
-  
+  const sumArray = (arr: number[]): number =>
+    arr.reduce((sum, num) => sum + num, 0);
+
   for (let i = 0, end = slidingWindowSum.length; i < end; ++i) {
     slidingWindowSum[i] = sumArray(input.slice(i, i + windowSize));
   }
@@ -30,17 +32,20 @@ const part2 = (rawInput: string) => {
   return part1Parsed(slidingWindowSum);
 };
 
-const testInputArray = [1, 2, 3, 4, 5, 6, 7, 8]
+const testInputArray = [1, 2, 3, 4, 5, 6, 7, 8];
 run({
   part1: {
     tests: [
-      { input: testInputArray.join('\n'), expected: testInputArray.length - 1 },
+      { input: testInputArray.join("\n"), expected: testInputArray.length - 1 },
     ],
     solution: part1,
   },
   part2: {
     tests: [
-      { input: testInputArray.join('\n'), expected: testInputArray.length - windowSize },
+      {
+        input: testInputArray.join("\n"),
+        expected: testInputArray.length - windowSize,
+      },
     ],
     solution: part2,
   },
