@@ -15,8 +15,8 @@
   "author": "Ian Duvall",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^16.11.11",
-    "aocrunner": "1.5.0",
+    "@types/node": "^16.11.12",
+    "aocrunner": "1.6.0",
     "husky": "7.0.4",
     "lint-staged": "12.1.2",
     "prettier": "2.5.1"
@@ -26,6 +26,6 @@
     "node": ">=16"
   },
   "lint-staged": {
-    "src/**/*": "yarn format"
+    "src/**/*": "pnpm format"
   }
 }

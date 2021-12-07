@@ -17,7 +17,7 @@
 [![Day](https://badgen.net/badge/04/%E2%98%85%E2%98%85/green)](src/day04)
 [![Day](https://badgen.net/badge/05/%E2%98%85%E2%98%85/green)](src/day05)
 [![Day](https://badgen.net/badge/06/%E2%98%85%E2%98%85/green)](src/day06)
-![Day](https://badgen.net/badge/07/%E2%98%86%E2%98%86/gray)
+[![Day](https://badgen.net/badge/07/%E2%98%85%E2%98%85/green)](src/day07)
 ![Day](https://badgen.net/badge/08/%E2%98%86%E2%98%86/gray)
 ![Day](https://badgen.net/badge/09/%E2%98%86%E2%98%86/gray)
 ![Day](https://badgen.net/badge/10/%E2%98%86%E2%98%86/gray)
@@ -46,19 +46,19 @@ _Click a badge to go to the specific day._
 ## Installation
 
 ```
-yarn
+pnpm
 ```
 
 ## Running in dev mode
 
 ```
-yarn start <day>
+pnpm start <day>
 ```
 
 Example:
 
 ```
-yarn start 1
+pnpm start 1
 ```
 
 ---
@@ -111,9 +111,9 @@ Both parts: 17.98ms
 
 ```
 Day 07
-Time part 1: -
-Time part 2: -
-Both parts: -
+Time part 1: 0.65ms
+Time part 2: 26.846ms
+Both parts: 27.496586ms
 ```
 
 ```
@@ -243,8 +243,8 @@ Both parts: -
 ```
 
 ```
-Total stars: 12/50
-Total time: 179.99999999999997ms
+Total stars: 14/50
+Total time: 207.497ms
 ```
 
 <!--/RESULTS-->
